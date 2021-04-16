@@ -1,0 +1,286 @@
+/* miniprogram/pages/home_center/common_panel/index.js.wxss */
+page{
+  height:100%;
+  }
+  .background {
+  width: 100%;
+  height: 100%;
+  position:fixed; 
+  background-size:100% 100%;
+  z-index: -1;
+  }
+  
+.common-panel-backgroud {
+  padding: 80px 80px;
+  position: absolute;
+  top: 80;
+  left: 80;
+  width: 50%;
+	height: 150px;
+	background-color: #fff;
+}
+
+.common-panel-header {
+  z-index: 1;
+  width: 100%;
+  height: 256px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.common-panel-header-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.common-panel-header-dpName {
+	width: 160px;
+  height: 25px;
+  text-align: center;
+	font-family: HelveticaNeue;
+	font-size: 12px;
+  line-height: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+	color: #d6d6d6;
+}
+
+.common-panel-header-dpValue {
+	width: 200px;
+	height: 75px;
+  font-family: DINCondensed-Bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+	font-size: 50px;
+	color: #0ef180;
+}
+
+.roDpItem-normal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 54px;
+  padding: 16px 2px;
+}
+
+.roDpItem-normal:not(:last-child) {
+  border-right: solid 1px #d6d6d6;
+}
+
+.roDpItem-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 54px;
+  padding: 16px 33px;
+}
+
+.roDpItem-two:not(:last-child) {
+  border-right: solid 1px #d6d6d6;
+}
+
+.roDpItem-one {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  height: 64px;
+  padding: 20px 24px;
+  background-color: #fff;
+  border-radius: 14px;
+}
+
+.roDpItem-dpName {
+  flex: 1;
+  width: 115px;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  line-height: 24px;
+  color: rgba(80, 80, 80, 0.5);
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.roDpItem-status {
+  width: 115px;
+  text-align: center;
+  font-family: PingFangSC-Semibold;
+  font-size: 18px;
+  line-height: 24px;
+  color: #505050;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.statuslist {
+  padding-top: 16px;
+  display: flex;
+  justify-content: center;
+  line-height: 12px;
+  flex-wrap: wrap;
+}
+
+.scroll-view {
+  padding: 16px 8px;
+  width: auto;
+  height: 100%;
+}
+.btnbox {
+  width: 500rpx;
+  height: 100rpx;
+  border-radius: 8rpx;
+  position: relative;
+  overflow: hidden;
+  background: #ffb80d;
+  color: #fff;
+  font-size: 36rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.btnbox .btn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin:0;
+  padding: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 0;
+  opacity: 0;
+  background: transparent;
+  z-index: 9;
+}
+ 
+.btnbox .text {
+  display: block;
+  line-height: 1.5;
+  text-align: center;
+}
+ 
+.btnbox_hover {
+  background: #e6a301
+}
+
+
+.progress_box{
+  position: relative;
+  width:220px;
+  height: 220px;  
+
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  
+}
+.progress_bg{
+  position: absolute;
+    width:220px;
+  height: 220px; 
+}
+.progress_canvas{ 
+  width:220px;
+  height: 220px; 
+} 
+.progress_text{ 
+  position: absolute; 
+  display: flex;  
+  align-items: center;
+  justify-content: center
+}
+.progress_info{   
+  font-size: 36rpx;
+  padding-left: 16rpx;
+  letter-spacing: 2rpx
+} 
+.progress_dot{
+  width:16rpx;
+  height: 16rpx;  
+  border-radius: 50%;
+  background-color: #fb9126;
+}
+
+
+.btn1 {
+  width: 80%;
+  margin-top: 20rpx;
+ 
+  color: rgb(169, 233, 245);
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: transparent;   /*设置背景颜色一致*/
+border-color: transparent; /*设置边框颜色一致*/
+}
+
+.btnImg {
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.btn1::after {
+  border-radius: 98rpx;
+  border: 0; 
+}
+.btn2 {
+  width: 80%;
+  margin-top: 20rpx;
+ 
+  color: rgb(238, 191, 120);
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: transparent;   /*设置背景颜色一致*/
+border-color: transparent; /*设置边框颜色一致*/
+}
+
+.btnImg2 {
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.btn2::after {
+  border-radius: 98rpx;
+  border: 0; 
+}
+
+.btn3 {
+  width: 80%;
+  margin-top: 20rpx;
+ 
+  color: rgb(238, 191, 120);
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: transparent;   /*设置背景颜色一致*/
+border-color: transparent; /*设置边框颜色一致*/
+}
+
+.btnImg3 {
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.btn3::after {
+  border-radius: 98rpx;
+  border: 0; 
+}

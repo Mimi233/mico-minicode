@@ -1,0 +1,75 @@
+<!--miniprogram/pages/home_center/common_panel/index.js.wxml-->
+<wxs src="./index.wxs" module="utils" />
+
+<view class="content">
+  <image class='background' src="/image/20210416152057.png" mode="aspectFill"></image>
+<navbar device_name="Mico" bind:jumpTodeviceEditPage="jumpTodeviceEditPage" />
+
+<view class="common-panel-header" style="width: 750rpx; height: 0rpx; display: flex; box-sizing: border-box; left: NaNrpx; top: NaNrpx">
+  <view class="common-panel-header-block">
+    <view class="common-panel-header-dpName"></view>
+    <view class="common-panel-header-dpValue" style="width: 401rpx; height: 59rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"></view>
+  </view>
+</view>
+
+
+ <view class="container" style="width: 750rpx; height: 150rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">
+     <view class='progress_box' style="position: relative; left: 118rpx; top: 43rpx">
+        <canvas class="progress_bg"   canvas-id="canvasProgressbg" style="position: absolute; left: 0rpx; top: 0rpx">  </canvas> 
+        <canvas class="progress_canvas"   canvas-id="canvasProgress" style="position: relative; left: 0rpx; top: 0rpx">  </canvas> 
+        <view class="progress_text">
+            <view class="progress_dot"></view> 
+            <text class='progress_info'> {{progress_txt}}</text>
+        </view>     
+    </view>
+</view>
+
+
+<view >{{ msg }}</view>
+<button class='btn1' open-type='openSetting' style="position: relative; left: -209rpx; top: 865rpx; width: 333rpx; height: 108rpx; display: flex; box-sizing: border-box">
+    <image class='btnImg' src='/image/consumption.png'></image>
+    <view>用电量</view>
+ </button>
+
+ <view >{{ msg }}</view>
+<button class='btn2' open-type='openSetting' style="position: relative; left: 209rpx; top: 739rpx; width: 333rpx; height: 108rpx; display: flex; box-sizing: border-box">
+    <image class='btnImg2' src='/image/kw.png'></image>
+    <view>功率统计</view>
+ </button>
+
+ <view >{{ msg }}</view>
+<button class='btn3' open-type='openSetting' style="position: relative; left: 0rpx; top: -254rpx; width: 333rpx; height: 108rpx; display: flex; box-sizing: border-box">
+    <image class='btnImg3' src='/image/data.png'></image>
+    <view>数据采集</view>
+ </button>
+
+
+<block wx:if="{{isRoDpListShow}}">
+  <view class="statuslist">
+    <block wx:for="{{roDpList}}" wx:key="{{item.code}}" wx:for-item="item" wx:for-index='idx'>
+      <view class="{{utils.countDpItem(roDpListLength,idx)}}">
+        <view class="roDpItem-dpName">{{item.code}}</view>
+        <view class="roDpItem-status">{{item.value}}</view>
+      </view>
+    </block>
+  </view>
+</block>
+
+<view class="scroll-view">
+  <block wx:if="{{isRwDpListShow}}">
+    <block wx:for="{{rwDpList}}" wx:key="{{item.code}}" wx:for-item="item">
+      <block wx:if="{{item.type === 'Boolean'}}">
+        <Boolean model:isChecked="{{item.value}}" dpCode="{{item.code}}" dpName="{{item.name}}" bind:sendDp="sendDp" />
+      </block>
+      <block wx:if="{{item.type === 'Integer'}}">
+        <Integer model:value="{{item.value}}" values="{{item.values}}" dpCode="{{item.code}}" dpName="{{item.name}}"
+          bind:sendDp="sendDp" />
+      </block>
+      <block wx:if="{{item.type === 'Enum'}}">
+        <Enum model:value="{{item.value}}" values="{{item.values}}" dpCode="{{item.code}}" dpName="{{item.name}}"
+          bind:sendDp="sendDp" />
+      </block>
+    </block>
+  </block>
+</view>
+</view>
